@@ -1,4 +1,4 @@
-class character extends MovableObject{
+class Character extends MovableObject{
     jump() {
 
     }
