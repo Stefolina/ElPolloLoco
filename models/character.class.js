@@ -13,23 +13,27 @@ class Character extends MovableObject{
         'img/2.Secuencias_Personaje-Pepe-corrección/2.Secuencia_caminata/W-26.png'
     ];
     world;
+    walking_sound = new Audio('audio/walking.mp3');
 
     constructor(){
-        super().loadImage('img/2.Secuencias_Personaje-Pepe-corrección/2.Secuencia_caminata/W-21.png');
+        super().loadImage(this.IMAGES_WALKING[0]);
         this.loadImages(this.IMAGES_WALKING);
         this.animate();
     }
 
     animate() {
         setInterval(() => {
-            if (this.world.keyboard.RIGHT) {
+            this.walking_sound.pause();
+            if (this.world.keyboard.RIGHT && this.x < this.world.level.level_end_x) {
                 this.x += this.speed;
                 this.otherDirection = false;
+                this.walking_sound.play();
             }
 
-            if (this.world.keyboard.LEFT) {
+            if (this.world.keyboard.LEFT && this.x > 0) {
                 this.x -= this.speed;
                 this.otherDirection = true;
+                this.walking_sound.play();
             }
             this.world.camera_x = -this.x + 100;
         }, 1000 / 60);
@@ -37,10 +41,7 @@ class Character extends MovableObject{
         setInterval(() => {
             if (this.world.keyboard.RIGHT || this.world.keyboard.LEFT) {
                 // walk animation
-                let i = this.currentImage % this.IMAGES_WALKING.length;
-                let path = this.IMAGES_WALKING[i];
-                this.img = this.imageCache[path];
-                this.currentImage++;
+                this.playAnimation(this.IMAGES_WALKING);
             }
         }, 60);
     }
