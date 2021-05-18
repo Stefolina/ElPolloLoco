@@ -1,5 +1,9 @@
 class Endboss extends MovableObject() {
 
+    height = 400;
+    width = 250;
+    y = 60;
+
     IMAGES_WALKING = [
         'img/4.Secuencias_Enemy_gigantón-Doña_Gallinota-/2.Ateción-ataque/1.Alerta/G5.png',
         'img/4.Secuencias_Enemy_gigantón-Doña_Gallinota-/2.Ateción-ataque/1.Alerta/G6.png',
@@ -14,7 +18,13 @@ class Endboss extends MovableObject() {
     constructor() {
         super().loadImage('img/4.Secuencias_Enemy_gigantón-Doña_Gallinota-/2.Ateción-ataque/1.Alerta/G5.png');
         this.loadImages(this.IMAGES_WALKING);
+        this.x = 2700;
+        this.animate();
+    }
 
-        this.x = 400;
+    animate() {
+        setInterval(() => {
+            this.playAnimation(this.IMAGES_WALKING);
+        }, 200);
     }
 }
