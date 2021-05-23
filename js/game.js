@@ -1,12 +1,12 @@
 let canvas;
 let world;
 let keyboard = new Keyboard();
+let bg_sound = new Audio('audio/bg3.mp3');
 
 function init() {
     canvas = document.getElementById('canvas');
     world = new World(canvas, keyboard);
-
-    console.log('My charackter is ', world.character)
+    /*bg_sound.play();*/
 }
 
 window.addEventListener("keydown", (e) => {
@@ -18,24 +18,12 @@ window.addEventListener("keydown", (e) => {
         keyboard.LEFT = true;
     }
 
-    if (e.keyCode == 39) {
-        keyboard.UP = true;
-    }
-
     if (e.keyCode == 38) {
-        keyboard.DOWN = true;
-    }
-
-    if (e.keyCode == 40) {
-        keyboard.RIGHT = true;
+        keyboard.UP = true;
     }
 
     if (e.keyCode == 32) {
         keyboard.SPACE = true;
-    }
-
-    if (e.keyCode == 84) {
-        keyboard.T = true;
     }
 });
 
@@ -48,23 +36,11 @@ window.addEventListener("keyup", (e) => {
         keyboard.LEFT = false;
     }
 
-    if (e.keyCode == 39) {
-        keyboard.UP = false;
-    }
-
     if (e.keyCode == 38) {
-        keyboard.DOWN = false;
-    }
-
-    if (e.keyCode == 40) {
-        keyboard.RIGHT = false;
+        keyboard.UP = false;
     }
 
     if (e.keyCode == 32) {
         keyboard.SPACE = false;
-    }
-
-    if (e.keyCode == 84) {
-        keyboard.T = false;
     }
 });

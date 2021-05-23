@@ -1,4 +1,5 @@
 class ThrowableObject extends MovableObject {
+    throwing_sound = new Audio('audio/glass.mp3');
 
     constructor(x, y) {
         super().loadImage('img/7.Marcadores/Icono/Botella.png');
@@ -16,5 +17,6 @@ class ThrowableObject extends MovableObject {
         setInterval( () => {
             this.x += 10;
         },30);
+        this.throwing_sound.play();
     }
 }

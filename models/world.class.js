@@ -7,6 +7,7 @@ class World {
     camera_x = -100;
     statusBar = new StatusBar();
     throwableObjects = [];
+    hurting_sound = new Audio('audio/hurt.mp3');
 
     constructor(canvas, keyboard){
         this.ctx = canvas.getContext('2d');
@@ -33,12 +34,13 @@ class World {
             if( this.character.isColliding(enemy)) {
                 this.character.hit();
                 this.statusBar.setPercentage(this.character.energy);
+                this.hurting_sound.play();
             }
         });
     }
 
     checkThrowObjects() {
-        if (this.keyboard.T) {
+        if (this.keyboard.UP) {
             let bottle = new ThrowableObject(this.character.x + 100, this.character.y + 100);
             this.throwableObjects.push(bottle);
         }

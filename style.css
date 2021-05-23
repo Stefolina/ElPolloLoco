@@ -7,9 +7,55 @@ body {
 
 canvas {
     background-color: black;
+    border-radius: 5px;
+    margin-bottom: 30px;
 }
 
 h1 {
     font-family: 'Ribeye Marrow', cursive;
     font-size: 50px;
+    margin-top: 5px;
+}
+
+.description {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(181,213,228);
+    opacity: 0.9;
+    border-radius: 5px;
+}
+
+.key-pics {
+    width: 40px;
+    height: 40px;
+    margin-top: -10px;
+}
+
+.keyboard-functions {
+    display: flex;
+}
+
+h2 {
+    font-family: 'Ribeye Marrow', cursive;
+    margin-top: 0px;
+}
+
+.function {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: rgb(246,184,96);
+    opacity: 0.8;
+    border-radius: 5px;
+    margin: 5px;
+    padding: 5px;
+    margin-top: -5px;
+}
+
+h3 {
+    margin-top: 0px;
 }
