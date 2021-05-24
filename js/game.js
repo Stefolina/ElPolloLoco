@@ -1,12 +1,24 @@
 let canvas;
 let world;
 let keyboard = new Keyboard();
-let bg_sound = new Audio('audio/bg3.mp3');
+let bg_sound = new Audio('audio/bg1.mp3');
 
 function init() {
     canvas = document.getElementById('canvas');
     world = new World(canvas, keyboard);
-    /*bg_sound.play();*/
+    bg_sound.play();
+}
+
+function fullscreen() {
+    canvas.requestFullscreen();
+}
+
+function mute() {
+    bg_sound.pause();
+}
+
+function soundOn() {
+    bg_sound.play();
 }
 
 window.addEventListener("keydown", (e) => {

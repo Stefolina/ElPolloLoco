@@ -8,7 +8,57 @@ body {
 canvas {
     background-color: black;
     border-radius: 5px;
-    margin-bottom: 30px;
+}
+
+.canvasframe {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 480px;
+    width: 720px;
+}
+
+.fullscreen {
+    width: 30px;
+    height: 30px;
+    margin-top: -40px;
+    margin-right: 80px;
+    z-index: 1;
+    cursor: pointer;
+    transition: all ease-in-out 225ms;
+}
+
+.fullscreen:hover {
+    transform: scale(1.1);
+}
+
+.mute {
+    width: 30px;
+    height: 30px;
+    margin-top: -30px;
+    margin-left: 80px;
+    z-index: 1;
+    cursor: pointer;
+    transition: all ease-in-out 225ms;
+}
+
+.mute:hover {
+    transform: scale(1.1);
+}
+
+.soundon {
+    width: 30px;
+    height: 30px;
+    margin-top: -30px;
+    margin-left: 0px;
+    z-index: 1;
+    cursor: pointer;
+    transition: all ease-in-out 225ms;
+}
+
+.soundon:hover {
+    transform: scale(1.1);
 }
 
 h1 {
@@ -22,9 +72,10 @@ h1 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: rgb(181,213,228);
+    
     opacity: 0.9;
     border-radius: 5px;
+    width: 80vh;
 }
 
 .key-pics {
@@ -37,11 +88,6 @@ h1 {
     display: flex;
 }
 
-h2 {
-    font-family: 'Ribeye Marrow', cursive;
-    margin-top: 0px;
-}
-
 .function {
     display: flex;
     flex-direction: column;
@@ -51,11 +97,13 @@ h2 {
     background-color: rgb(246,184,96);
     opacity: 0.8;
     border-radius: 5px;
-    margin: 5px;
+    margin: 10px;
     padding: 5px;
-    margin-top: -5px;
+    margin-top: 20px;
+    width: 150px;
 }
 
 h3 {
     margin-top: 0px;
+    font-family: 'Rajdhani', sans-serif;
 }
