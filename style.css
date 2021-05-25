@@ -10,6 +10,32 @@ canvas {
     border-radius: 5px;
 }
 
+.d-none {
+    display: none;
+}
+
+.start {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('img/9.Intro _ Outro Image/Start Screen/Opción 1.png');
+    background-position: center;
+    background-size: cover;
+    height: 480px;
+    width: 720px;
+}
+
+.play {
+    width: 90px;
+    height: 90px;
+    transition: all ease-in-out 225ms;
+    cursor: pointer;
+}
+
+.play:hover {
+    transform: scale(1.2);
+}
+
 .canvasframe {
     display: flex;
     justify-content: center;

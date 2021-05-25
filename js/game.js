@@ -2,13 +2,21 @@ let canvas;
 let world;
 let keyboard = new Keyboard();
 let bg_sound = new Audio('audio/bg1.mp3');
+let intro_sound = new Audio('audio/introsound.mp3');
 
-function init() {
+function startGame() {  
+    document.getElementById('start').classList.remove('start');
+    document.getElementById('start').classList.add('d-none');
+    document.getElementById('canvasframe').classList.remove('d-none');
+    document.getElementById('canvasframe').classList.add('canvasframe');
+
     canvas = document.getElementById('canvas');
     world = new World(canvas, keyboard);
+
+    intro_sound.play();
     bg_sound.play();
 }
-
+ 
 function fullscreen() {
     canvas.requestFullscreen();
 }

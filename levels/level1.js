@@ -3,10 +3,23 @@ const level1 = new Level(
         new Chicken(),
         new Chicken(),
         new Chicken(),
+        new Chicken(),
+        new Chicken(),
+        new Chicken(),
+        new ChickenYellow(),
+        new ChickenYellow(),
+        new ChickenYellow(),
+        new ChickenYellow(),
+        new ChickenYellow(),
+        new ChickenYellow(),
         new Endboss()
     ],
 
     [
+        new Cloud(),
+        new Cloud(),
+        new Cloud(),
+        new Cloud(),
         new Cloud()
     ],
 

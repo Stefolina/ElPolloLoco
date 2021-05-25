@@ -24,16 +24,4 @@ class DrawableObject {
             this.imageCache[path] = img;
         });
     }
-
-    drawFrame(ctx) {
-        // Blue rectangle
-
-        if(this instanceof Character || this instanceof Chicken) {
-            ctx.beginPath();
-            ctx.lineWidth = '3';
-            ctx.strokeStyle = 'yellow';
-            ctx.rect(this.x, this.y, this.width, this.height);
-            ctx.stroke();
-        }
-    }
 }

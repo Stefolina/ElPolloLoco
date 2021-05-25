@@ -1,5 +1,6 @@
 class ThrowableObject extends MovableObject {
     throwing_sound = new Audio('audio/glass.mp3');
+    collecting_sound = new Audio('audio/bottle.mp3');
 
     constructor(x, y) {
         super().loadImage('img/7.Marcadores/Icono/Botella.png');
