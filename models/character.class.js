@@ -1,5 +1,4 @@
 class Character extends MovableObject{
-
     height = 250;
     width = 150;
     y = 80;
@@ -79,7 +78,15 @@ class Character extends MovableObject{
         setInterval(() => {
             if (this.isDead()) {
                 this.playAnimation(this.IMAGES_DEAD);
-            } else if (this.isHurt()){
+                    document.getElementById('canvasframe').classList.remove('canvasframe');
+                    document.getElementById('canvasframe').classList.add('d-none');
+                    document.getElementById('gameover').classList.remove('d-none');
+                    document.getElementById('gameover').classList.add('gameover');
+                    hurting_sound.pause();
+                    bg_sound.pause();
+                    gameover_sound.play();
+
+                } else if (this.isHurt()){
                 this.playAnimation(this.IMAGES_HURT);
             } else if (this.isAboveGround()) {
                 this.playAnimation(this.IMAGES_JUMPING);

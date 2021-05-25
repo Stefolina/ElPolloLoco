@@ -45,6 +45,22 @@ canvas {
     width: 720px;
 }
 
+.gameover {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('img/5.Fondo/1.png');
+    background-position: center;
+    background-size: cover;
+    height: 480px;
+    width: 720px;
+}
+
+.gameoverText {
+    height: 480px;
+    width: 720px;
+}
+
 .fullscreen {
     width: 30px;
     height: 30px;
