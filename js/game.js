@@ -1,6 +1,7 @@
 let canvas;
 let world;
 let keyboard = new Keyboard();
+
 let bg_sound = new Audio('audio/bg1.mp3');
 let intro_sound = new Audio('audio/introsound.mp3');
 let gameover_sound = new Audio('audio/gameover.mp3');

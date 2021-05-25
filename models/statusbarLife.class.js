@@ -1,4 +1,4 @@
-class StatusBar extends DrawableObject{
+class StatusbarLife extends DrawableObject{
 
     IMAGES = [
         'img/7.Marcadores/Barra/Marcador vida/azul/0_.png',

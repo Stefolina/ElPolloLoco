@@ -5,8 +5,10 @@ class World {
     ctx;
     keyboard;
     camera_x = -100;
-    statusBar = new StatusBar();
+    statusbarLife = new StatusbarLife();
+    statusbarBottles = new StatusbarBottles();
     throwableObjects = [];
+    placedBottles = [1000,1340,1680,2000,2400];
 
     constructor(canvas, keyboard){
         this.ctx = canvas.getContext('2d');
@@ -32,7 +34,7 @@ class World {
         this.level.enemies.forEach( (enemy) => {
             if( this.character.isColliding(enemy)) {
                 this.character.hit();
-                this.statusBar.setPercentage(this.character.energy);
+                this.statusbarLife.setPercentage(this.character.energy);
                 hurting_sound.play();
             }
         });
@@ -52,11 +54,13 @@ class World {
 
         this.ctx.translate(-this.camera_x,0); //Back
         // ------- space for fixed objects -------
-        this.addToMap(this.statusBar);
+        this.addToMap(this.statusbarLife);
+        this.addToMap(this.statusbarBottles);
         this.ctx.translate(this.camera_x,0); //Forward
 
         this.addToMap(this.character);
         this.addObjectsToMap(this.level.enemies);
+        /*this.drawBottles();*/
         this.addObjectsToMap(this.level.clouds);
         this.addObjectsToMap(this.throwableObjects);
         this.ctx.translate(-this.camera_x,0);
@@ -97,5 +101,12 @@ class World {
         mo.x = mo.x * -1;
         this.ctx.restore();
     }
+
+    /*drawBottles() {
+        for(let i = 0; i < placedBottles.length; i++) {
+            let bottle_x = placedBottles[i];
+            addObjectsToMap('img/7.Marcadores/Icono/Botella.png', bottle_x, 370, 1, 1);
+        }
+    }*/
 }
 
