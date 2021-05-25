@@ -6,6 +6,7 @@ class World {
     keyboard;
     camera_x = -100;
     statusbarLife = new StatusbarLife();
+    statusbarBottles = new StatusbarBottles();
     throwableObjects = [];
     placedBottles = [1000,1340,1680,2000,2400];
 
@@ -53,6 +54,7 @@ class World {
 
         this.ctx.translate(-this.camera_x,0); //Back
         // ------- space for fixed objects -------
+        this.addToMap(this.statusbarBottles);
         this.addToMap(this.statusbarLife);
         this.ctx.translate(this.camera_x,0); //Forward
 
