@@ -8,7 +8,6 @@ class World {
     statusbarLife = new StatusbarLife();
     statusbarBottles = new StatusbarBottles();
     throwableObjects = [];
-    placedBottles = [1000,1340,1680,2000,2400];
 
     constructor(canvas, keyboard){
         this.ctx = canvas.getContext('2d');
@@ -51,20 +50,20 @@ class World {
         this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
         this.ctx.translate(this.camera_x,0);
         this.addObjectsToMap(this.level.backgroundObjects);
-
         this.ctx.translate(-this.camera_x,0); //Back
         // ------- space for fixed objects -------
+        this.ctx.translate(this.camera_x,0); //Forward
+        this.addObjectsToMap(this.level.enemies);
+        this.addObjectsToMap(this.level.bottles);
+        this.addObjectsToMap(this.level.clouds);
+        // Statusbar einfügen
+        this.ctx.translate(-this.camera_x,0);
         this.addToMap(this.statusbarBottles);
         this.addToMap(this.statusbarLife);
-        this.ctx.translate(this.camera_x,0); //Forward
-
-        this.addToMap(this.character);
-        this.addObjectsToMap(this.level.enemies);
-        /*this.drawBottles();*/
-        this.addObjectsToMap(this.level.clouds);
+        this.ctx.translate(this.camera_x,0);
         this.addObjectsToMap(this.throwableObjects);
+        this.addToMap(this.character);
         this.ctx.translate(-this.camera_x,0);
-
         //draw() wird immer wieder aufgerufen
         let self = this;
         requestAnimationFrame(function() {
@@ -101,12 +100,5 @@ class World {
         mo.x = mo.x * -1;
         this.ctx.restore();
     }
-
-    /*drawBottles() {
-        for(let i = 0; i < placedBottles.length; i++) {
-            let bottle_x = placedBottles[i];
-            addObjectsToMap('img/7.Marcadores/Icono/Botella.png', bottle_x, 370, 1, 1);
-        }
-    }*/
 }
 
