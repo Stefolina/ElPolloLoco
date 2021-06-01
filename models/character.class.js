@@ -3,6 +3,8 @@ class Character extends MovableObject{
     width = 150;
     y = 80;
     speed = 10;
+    gameover = false;
+    
     IMAGES_WALKING = [
         'img/2.Secuencias_Personaje-Pepe-corrección/2.Secuencia_caminata/W-21.png',
         'img/2.Secuencias_Personaje-Pepe-corrección/2.Secuencia_caminata/W-22.png',
@@ -84,6 +86,7 @@ class Character extends MovableObject{
                     hurting_sound.pause();
                     bg_sound.pause();
                     gameover_sound.play();
+                    this.gameover = true;
 
                 } else if (this.isHurt()){
                 this.playAnimation(this.IMAGES_HURT);
