@@ -14,7 +14,7 @@ class ChickenYellow extends MovableObject {
         this.loadImages(this.IMAGES_WALKING);
 
         this.x = 400 + Math.random() * 2900; //Zahl zwischen 200 und 700
-        this.speed = 0.15 + Math.random() * 0.5;
+        this.speed = 2.2 + Math.random() * 0.5;
 
         this.animate();
     }

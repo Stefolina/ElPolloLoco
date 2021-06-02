@@ -36,6 +36,7 @@ class World {
                 this.character.hit();
                 this.statusbarLife.setPercentage(this.character.energy);
                 hurting_sound.play();
+                chicken_sound.play();
             }
         });
     }
